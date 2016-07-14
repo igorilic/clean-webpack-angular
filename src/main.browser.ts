@@ -9,14 +9,15 @@ import { runEffects } from '@ngrx/effects';
 import { instrumentStore } from '@ngrx/store-devtools';
 import { useLogMonitor } from '@ngrx/store-log-monitor';
 
+// import {AppComponent} from './app';
 import App from './app';
-import routes from './routes';
+// import routes from './routes';
 import schema from './db-schema';
 import reducer from './reducers';
-import effects from './effects';
+// import effects from './effects';
 import services from './services';
-import actions from './actions';
-import guards from './guards';
+// import actions from './actions';
+// import guards from './guards';
 
 
 bootstrap(App, [
@@ -40,14 +41,14 @@ bootstrap(App, [
    *
    * Source: https://github.com/ngrx/effects/blob/master/lib/run-effects.ts#L8-L20
    */
-  runEffects(effects),
+  // runEffects(effects),
 
   /**
    * provideRouter sets up all of the providers for @angular/router. It accepts
    * an array of routes and a location strategy. By default, it will use
    * `PathLocationStrategy`.
    */
-  provideRouter(routes),
+  // provideRouter(routes),
 
   /**
    * Make router directives available to all components
@@ -80,8 +81,8 @@ bootstrap(App, [
    * be used by all of our components, effects, and guards.
    */
   services,
-  actions,
-  guards,
+  // actions,
+  // guards,
 
   disableDeprecatedForms(),
   provideForms()

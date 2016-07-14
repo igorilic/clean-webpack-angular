@@ -40,9 +40,9 @@ import { combineReducers } from '@ngrx/store';
  * the state of the reducer plus any selector functions. The `* as`
  * notation packages up all of the exports into a single object.
  */
-import searchReducer, * as fromSearch from './search';
-import booksReducer, * as fromBooks from './books';
-import collectionReducer, * as fromCollection from './collection';
+// import searchReducer, * as fromSearch from './search';
+// import booksReducer, * as fromBooks from './books';
+// import collectionReducer, * as fromCollection from './collection';
 
 
 /**
@@ -50,9 +50,9 @@ import collectionReducer, * as fromCollection from './collection';
  * our top level state interface is just a map of keys to inner state types.
  */
 export interface AppState {
-  search: fromSearch.SearchState;
-  books: fromBooks.BooksState;
-  collection: fromCollection.CollectionState;
+  // search: fromSearch.SearchState;
+  // books: fromBooks.BooksState;
+  // collection: fromCollection.CollectionState;
 }
 
 
@@ -64,9 +64,9 @@ export interface AppState {
  * the result from right to left.
  */
 export default compose(storeLogger(), combineReducers)({
-  search: searchReducer,
-  books: booksReducer,
-  collection: collectionReducer
+  // search: searchReducer,
+  // books: booksReducer,
+  // collection: collectionReducer
 });
 
 
@@ -86,94 +86,4 @@ export default compose(storeLogger(), combineReducers)({
  * }
  * ```
  */
- export function getBooksState() {
-  return (state$: Observable<AppState>) => state$
-    .select(s => s.books);
-}
-
-/**
- * Every reducer module exports selector functions, however child reducers
- * have no knowledge of the overall state tree. To make them useable, we
- * need to make new selectors that wrap them.
- *
- * Once again our compose function comes in handy. From right to left, we
- * first select the books state then we pass the state to the book
- * reducer's getBooks selector, finally returning an observable
- * of search results.
- */
- export function getBookEntities() {
-   return compose(fromBooks.getBookEntities(), getBooksState());
- }
-
- export function getBook(id: string) {
-   return compose(fromBooks.getBook(id), getBooksState());
- }
-
- export function hasBook(id: string) {
-   return compose(fromBooks.hasBook(id), getBooksState());
- }
-
- export function getBooks(bookIds: string[]) {
-   return compose(fromBooks.getBooks(bookIds), getBooksState());
- }
-
-
-/**
- * Just like with the books selectors, we also have to compose the search
- * reducer's and collection reducer's selectors.
- */
-export function getSearchState() {
- return (state$: Observable<AppState>) => state$
-   .select(s => s.search);
-}
-
-export function getSearchBookIds() {
-  return compose(fromSearch.getBookIds(), getSearchState());
-}
-
-export function getSearchStatus() {
-  return compose(fromSearch.getStatus(), getSearchState());
-}
-
-export function getSearchQuery() {
-  return compose(fromSearch.getQuery(), getSearchState());
-}
-
-/**
- * Some selector functions create joins across parts of state. This selector
- * composes the search result IDs to return an array of books in the store.
- */
-export function getSearchResults() {
-  return (state$: Observable<AppState>) => state$
-    .let(getSearchBookIds())
-    .switchMap(bookIds => state$.let(getBooks(bookIds)));
-}
-
-
-
-export function getCollectionState() {
-  return (state$: Observable<AppState>) => state$
-    .select(s => s.collection);
-}
-
-export function getCollectionLoaded() {
-  return compose(fromCollection.getLoaded(), getCollectionState());
-}
-
-export function getCollectionLoading() {
-  return compose(fromCollection.getLoading(), getCollectionState());
-}
-
-export function getCollectionBookIds() {
-  return compose(fromCollection.getBookIds(), getCollectionState());
-}
-
-export function isBookInCollection(id: string) {
-  return compose(fromCollection.isBookInCollection(id), getCollectionState());
-}
-
-export function getBookCollection() {
-  return (state$: Observable<AppState>) => state$
-    .let(getCollectionBookIds())
-    .switchMap(bookIds => state$.let(getBooks(bookIds)));
-}
+ 

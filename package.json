@@ -1,7 +1,7 @@
 {
   "name": "angular2-webpack-lite",
   "version": "1.0.0",
-  "description": "Angular2 Webpack Lite Boilerplate",
+  "description": "Angular2 Clean Webpack Lite Boilerplate",
   "main": "index.ts",
   "scripts": {
     "typings": "typings",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TheLarkInn/angular2-webpack-lite.git"
+    "url": "git+https://github.com/igorilic/clean-webpack-angular.git"
   },
-  "author": "Sean Larkin",
+  "author": "Igor Ilic",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TheLarkInn/angular2-webpack-lite/issues"
+    "url": "https://github.com/igorilic/clean-webpack-angular/issues"
   },
-  "homepage": "https://github.com/TheLarkInn/angular2-webpack-lite#readme",
+  // "homepage": "https://github.com/TheLarkInn/angular2-webpack-lite#readme",
   "engines": {
     "node": ">= 4.2.1",
     "npm": ">= 3"

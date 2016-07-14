@@ -1,5 +1,5 @@
-import { BookEffects } from './book';
+// import { BookEffects } from './book';
 
-export default [
-  BookEffects
-];
+// export default [
+//   BookEffects
+// ];
