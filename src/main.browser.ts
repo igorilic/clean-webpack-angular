@@ -11,7 +11,7 @@ import { useLogMonitor } from '@ngrx/store-log-monitor';
 
 // import {AppComponent} from './app';
 import App from './app';
-// import routes from './routes';
+import routes from './routes';
 import schema from './db-schema';
 import reducer from './reducers';
 // import effects from './effects';
@@ -48,7 +48,7 @@ bootstrap(App, [
    * an array of routes and a location strategy. By default, it will use
    * `PathLocationStrategy`.
    */
-  // provideRouter(routes),
+  provideRouter(routes),
 
   /**
    * Make router directives available to all components

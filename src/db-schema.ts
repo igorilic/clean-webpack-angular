@@ -6,9 +6,12 @@ import { DBSchema } from '@ngrx/db';
  */
 const schema: DBSchema = {
   version: 1,
-  name: 'app',
+  name: 'players-app',
   stores: {
-    
+    players: {
+      autoIncrement: true,
+      primaryKey: 'id'
+    }
   }
 };
 

@@ -1,1 +1,1 @@
-// export { Book } from './book';
+export { Player } from './player';

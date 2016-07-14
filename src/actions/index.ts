@@ -1,10 +1,10 @@
-// import { BookActions } from './book';
+import { PlayerActions } from './players';
 
 
-// export {
-//   BookActions
-// };
+export {
+  PlayerActions
+};
 
-// export default [
-//   BookActions
-// ];
+export default [
+  PlayerActions
+];

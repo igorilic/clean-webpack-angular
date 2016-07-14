@@ -21,7 +21,6 @@
   "bugs": {
     "url": "https://github.com/igorilic/clean-webpack-angular/issues"
   },
-  // "homepage": "https://github.com/TheLarkInn/angular2-webpack-lite#readme",
   "engines": {
     "node": ">= 4.2.1",
     "npm": ">= 3"

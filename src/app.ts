@@ -38,9 +38,7 @@ import { StoreLogMonitorComponent } from '@ngrx/store-log-monitor';
       width: 300px;
     }
   `],
-  template: `
-    <h1>Webpack NGRX Starter</h1>
-    <ngrx-store-log-monitor toggleCommand="ctrl-t"></ngrx-store-log-monitor>
-  `
+  templateUrl : 'app.html' 
+  
 })
 export default class App { }

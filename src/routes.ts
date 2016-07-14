@@ -3,15 +3,15 @@ import { RouterConfig } from '@angular/router';
 // import { BookExistsGuard } from './guards';
 import { load } from './services/async-component-resolver';
 
-// const routes: RouterConfig = [
-//   {
-//     path: '',
-//     component: load(() => new Promise(resolve => {
-//       (require as any).ensure([], require => {
-//         resolve(require('./app').AppComponent);
-//       });
-//     }))
-//   }
+const routes: RouterConfig = [
+  {
+    path: '',
+    component: load(() => new Promise(resolve => {
+      (require as any).ensure([], require => {
+        resolve(require('./pages/player-view').PlayerViewComponent);
+      });
+    }))
+  }
  
   // {
   //   path: '**',
@@ -21,6 +21,6 @@ import { load } from './services/async-component-resolver';
   //     });
   //   }))
   // }
-// ];
+];
 
-// export default routes;
+export default routes;
