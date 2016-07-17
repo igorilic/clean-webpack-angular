@@ -41,7 +41,7 @@ import { combineReducers } from '@ngrx/store';
  * notation packages up all of the exports into a single object.
  */
 // import searchReducer, * as fromSearch from './search';
-// import booksReducer, * as fromBooks from './books';
+import playersReducer, * as fromPlayers from './players';
 // import collectionReducer, * as fromCollection from './collection';
 
 
@@ -51,7 +51,7 @@ import { combineReducers } from '@ngrx/store';
  */
 export interface AppState {
   // search: fromSearch.SearchState;
-  // books: fromBooks.BooksState;
+  players: fromPlayers.PlayersState;
   // collection: fromCollection.CollectionState;
 }
 
@@ -65,7 +65,7 @@ export interface AppState {
  */
 export default compose(storeLogger(), combineReducers)({
   // search: searchReducer,
-  // books: booksReducer,
+  players: playersReducer,
   // collection: collectionReducer
 });
 
@@ -86,4 +86,26 @@ export default compose(storeLogger(), combineReducers)({
  * }
  * ```
  */
- 
+
+export function getPlayersState() {
+  return (state$: Observable<AppState>) => state$
+    .select(s => s.players);
+}
+
+////
+
+export function getPlayersEntities() {
+  return compose(fromPlayers.getPlayerEntities(), getPlayersState());
+}
+
+export function getPlayer(id:string) {
+  return compose(fromPlayers.getPlayer(id), getPlayersState());
+}
+
+export function getPlayers(playerIds:string[]) {
+  return compose(fromPlayers.getPlayers(playerIds), getPlayersState());
+}
+
+export function hasPlayer(id:string) {
+  return compose(fromPlayers.hasPlayer(id), getPlayersState());
+}

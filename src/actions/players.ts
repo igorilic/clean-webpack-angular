@@ -20,10 +20,25 @@ export class PlayerActions {
         };
     }
 
-    static LOAD_TEAM = '[Player] Load Collection';
+    static REMOVE_FROM_TEAM_SUCCESS = '[Player] Remove from Team Success';
+    removeFromTeamSuccess(player: Player): Action {
+        return {
+            type: PlayerActions.REMOVE_FROM_TEAM_SUCCESS,
+            payload: player
+        };
+    }
+
+    static LOAD_TEAM = '[Player] Load Team';
     loadTeam(): Action {
         return {
             type: PlayerActions.LOAD_TEAM
+        };
+    }
+    static LOAD_TEAM_SUCCESS = '[Player] Load Team Success';
+    loadTeamSuccess(players: Player[]): Action {
+        return {
+            type: PlayerActions.LOAD_TEAM_SUCCESS,
+            payload: players
         };
     }
 
